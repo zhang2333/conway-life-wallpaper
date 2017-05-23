@@ -10,8 +10,14 @@
         interval: 1000
     };
 
-    var getColorByGlobal = getColorString.bind(null, global.color, global.alpha);
+    // utils
+    function getColorString(color, alpha) {
+        return 'rgba(' + color.join(',') + ',' + alpha + ')';
+    }
 
+    var getColorByGlobal = getColorString.bind(null, global.color, global.alpha);
+    
+    // game
     var config = {
         color: getColorByGlobal(),
         interval: global.interval,
@@ -97,19 +103,19 @@
 
             // alpha
             if (properties.colorAlpha) {
-                global.alpha = properties.colorAlpha / 100;
+                global.alpha = properties.colorAlpha.value / 100;
                 game.cxt.fillStyle = getColorByGlobal();
             }
 
             // interval
-            if (properties.interval > 0) {
-                game.config.interval = global.interval = parseInt(properties.interval);
+            if (properties.interval && properties.interval.value > 0) {
+                game.config.interval = global.interval = parseInt(properties.interval.value);
+            }
+
+            // image
+            if (properties.image) {
+                document.body.style.backgroundImage = 'url("file:///' + properties.image.value + '")';
             }
         }
     };
-
-    // utils
-    function getColorString(color, alpha) {
-        return 'rgba(' + color.join(',') + ',' + alpha + ')';
-    }
 })();

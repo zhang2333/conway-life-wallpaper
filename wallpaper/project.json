@@ -1,0 +1,54 @@
+{
+	"description" : "在桌面上画出属于你的康威生命游戏！(尚未完成，敬请期待)\nDraw shapes with your mouse.Enjoy it!\n\n操作：悬停右上角条纹图标可\"暂停/继续\"及\"重置画板\"\nActions: Hover the upper right icon",
+	"file" : "index.html",
+	"general" : 
+	{
+		"properties" : 
+		{
+			"schemecolor" : 
+			{
+				"order" : 0,
+				"text" : "ui_browse_properties_scheme_color",
+				"type" : "color",
+				"value" : "0 0 0"
+			},
+			"color" : 
+			{
+				"order" : 1,
+				"text" : "<br>方块颜色<br>Cell Color<br>",
+				"type" : "color",
+				"value" : "1 1 1"
+			},
+			"colorAlpha" : 
+			{
+				"order" : 2,
+				"editable" : true,
+				"max" : 100,
+				"min" : 0,
+				"text" : "<br>方块透明度<br>Cell alpha<br>",
+				"type" : "slider",
+				"value" : 40
+			},
+			"interval" : 
+			{
+				"order" : 3,
+				"text" : "<br>演算间隔(毫秒)<br>Generate interval(ms)<br>",
+				"type" : "textinput",
+				"value" : "1000"
+			},
+			"image" : 
+			{
+				"order" : 4,
+				"text" : "<br>背景图片<br>Background image<br>",
+				"type" : "file"
+			}
+		}
+	},
+	"monetization" : false,
+	"preview" : "preview.jpg",
+	"tags" : [ "Pixel art" ],
+	"title" : "Drawing Conway's game of life - 手绘康威生命游戏",
+	"type" : "web",
+	"visibility" : "public",
+	"workshopid" : 930020376
+}
