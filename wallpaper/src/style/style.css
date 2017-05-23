@@ -1,0 +1,88 @@
+html, body { 
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body {
+    background-image: url("../../static/background.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.menu {
+    position: absolute;
+    right: 50px;
+    top: 50px;
+    user-select: none;
+}
+
+.menu-icon-wrapper {
+    width: 40px;
+    height: 40px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s ease;
+}
+
+.menu:hover .menu-icon-wrapper {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.menu-icon {
+    width: 20px;
+}
+
+.menu-icon .strip {
+    width: 20px;
+    height: 2px;
+    margin-bottom: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: block;
+    transition: all .3s ease;
+}
+
+.menu-icon .strip:last-child {
+    margin-bottom: 0;
+}
+
+.menu:hover .strip {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.menu-btns {
+    width: 60px;
+    padding-top: 50px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 15px;
+    text-align: center;
+    display: none;
+    position: absolute;
+    bottom: -50px;
+    right: -8px;
+}
+
+.menu:hover .menu-btns {
+    display: block;
+}
+
+.menu-btns .menu-btn {
+    padding-top: 1px;
+    padding-bottom: 2px;
+    cursor: pointer;
+}
+
+.menu-btns .menu-btn:hover {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.menu-btns .menu-btn:active {
+    color: rgba(255, 255, 255, 0.3);
+}
