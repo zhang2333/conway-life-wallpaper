@@ -15,11 +15,13 @@
         return 'rgba(' + color.join(',') + ',' + alpha + ')';
     }
 
-    var getColorByGlobal = getColorString.bind(null, global.color, global.alpha);
+    var getColorFromGlobal = function () {
+        return getColorString(global.color, global.alpha);
+    };
     
     // game
     var config = {
-        color: getColorByGlobal(),
+        color: getColorFromGlobal(),
         interval: global.interval,
         initEntropy: 0
     };
@@ -28,7 +30,7 @@
     game.reBoard = game.resetBoard();
 
     game.on('beforeUpdate', function () {
-        this.cxt.fillStyle = getColorByGlobal();
+        this.cxt.fillStyle = getColorFromGlobal();
         this.draw(this.reBoard);
     });
 
@@ -98,13 +100,13 @@
                 global.color = color.map(function(c) {
                     return Math.ceil(c * 255);
                 });
-                game.cxt.fillStyle = getColorByGlobal();
+                game.cxt.fillStyle = getColorFromGlobal();
             }
 
             // alpha
             if (properties.colorAlpha) {
                 global.alpha = properties.colorAlpha.value / 100;
-                game.cxt.fillStyle = getColorByGlobal();
+                game.cxt.fillStyle = getColorFromGlobal();
             }
 
             // interval
@@ -114,7 +116,8 @@
 
             // image
             if (properties.image) {
-                document.body.style.backgroundImage = 'url("file:///' + properties.image.value + '")';
+                var image = properties.image.value ? 'file:///' + properties.image.value : './static/background.jpg';
+                document.body.style.backgroundImage = 'url("' + image + '")';
             }
         }
     };
